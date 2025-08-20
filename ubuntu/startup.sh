@@ -13,7 +13,7 @@ apt install -y \
 
 # === Programming Tools (Assembly, C/C++, Debuggers) ===
 apt install -y \
-       nasm gcc gdb clang-format clangd
+       nasm gcc gdb clang-format clangd python3-venv
 
 # === Programming Languages & Runtimes ===
 apt install -y \
