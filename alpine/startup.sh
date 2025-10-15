@@ -1,7 +1,8 @@
 # === Essential CLI Tools ===
 apk add git curl make cmake
-apk add htop btop bat exa procs ripgrep
+apk add htop btop bat exa procs ripgrep fzf
 apk add neovim zsh vim tmux
+apk add fontconfig
 
 # === Networking Tools ===
 apk add busybox-extras ngrep netcat-openbsd socat
