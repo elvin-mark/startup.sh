@@ -1,8 +1,8 @@
 # === Essential CLI Tools ===
-pacman -Syu git curl wget zsh make vim unzip
+pacman -Syu git curl wget zsh make cmake vim unzip
 pacman -Syu cmus w3m
 pacman -Syu fastfetch htop btop bat
-pacman -Syu neovim ripgrep tmux
+pacman -Syu ripgrep tmux
 
 # === Networking Tools ===
 pacman -Syu ngrep socat inetutils nmap tcpdump
@@ -13,15 +13,14 @@ pacman -Syu nasm gcc gdb clang
 # === Programming Languages & Runtimes ===
 pacman -Syu python python-pip go npm nodejs
 
-# === Create Neovim config directory ===
+# === Build and install Neovim
+git clone https://github.com/neovim/neovim.git /tmp/neovim
+cd /tmp/neovim && make && make install
+cd $HOME
+
+# === Clone LazyVim starter config ===
 mkdir -p $HOME/.config/nvim
-
-# === Install vim-plug (plugin manager for Neovim) ===
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# === Clone personal Neovim config ===
-git clone https://github.com/elvin-mark/init.vim $HOME/.config/nvim
+git clone https://github.com/LazyVim/starter.git $HOME/.config/nvim
 
 # === Install Python requirements ===
 pip3 install -r requirements.txt  --break-system-packages

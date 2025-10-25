@@ -1,7 +1,7 @@
 # === Essential CLI Tools ===
 apk add git curl make cmake
 apk add htop btop bat exa procs ripgrep fzf
-apk add neovim zsh vim tmux
+apk add zsh vim tmux
 apk add fontconfig
 
 # === Networking Tools ===
@@ -15,15 +15,15 @@ apk add clang clang-dev python3-dev linux-headers
 
 # apk add kubectl docker # (Optional)
 
-# === Create Neovim config directory ===
+# === Build and install Neovim
+apk add gettext-dev
+git clone https://github.com/neovim/neovim.git /tmp/neovim
+cd /tmp/neovim && make && make install
+cd $HOME
+
+# === Clone LazyVim starter config ===
 mkdir -p $HOME/.config/nvim
-
-# === Install vim-plug (plugin manager for Neovim) ===
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# === Clone personal Neovim config ===
-git clone https://github.com/elvin-mark/init.vim $HOME/.config/nvim
+git clone https://github.com/LazyVim/starter.git $HOME/.config/nvim
 
 # === Install Python requirements ===
 pip3 install -r requirements.txt  --break-system-packages

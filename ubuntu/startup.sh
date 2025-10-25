@@ -28,15 +28,9 @@ rm nvim-linux-x86_64.tar.gz
 mv nvim-linux-x86_64 nvim && mv nvim /opt/
 ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
 
-# === Create Neovim config directory ===
+# === Clone LazyVim starter config ===
 mkdir -p $HOME/.config/nvim
-
-# === Install vim-plug (plugin manager for Neovim) ===
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# === Clone personal Neovim config ===
-git clone https://github.com/elvin-mark/init.vim $HOME/.config/nvim
+git clone https://github.com/LazyVim/starter.git $HOME/.config/nvim
 
 # === Install Python requirements ===
 pip3 install -r requirements.txt  --break-system-packages
