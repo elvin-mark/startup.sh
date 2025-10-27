@@ -10,8 +10,14 @@ apk add busybox-extras ngrep netcat-openbsd socat
 # === Programming Tools (Assembly, C/C++, Debuggers) ===
 apk add gcc musl-dev
 apk add nasm gdb
-apk add python3 py3-pip go npm nodejs
+apk add python3 py3-pip npm nodejs
 apk add clang clang-dev python3-dev linux-headers
+
+wget https://go.dev/dl/go1.25.3.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.25.3.linux-amd64.tar.gz 
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+rm go1.25.3.linux-amd64.tar.gz
+source ~/.bashrc
 
 # apk add kubectl docker # (Optional)
 
