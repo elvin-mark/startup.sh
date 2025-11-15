@@ -50,3 +50,20 @@ services:
       - tail
       - -f
       - /dev/null
+
+  fedora-dev-env:
+    image: fedora:latest
+    container_name: fedora-dev-env
+    volumes:
+      - .:/root/startup.sh
+      - /var/run/docker.sock:/var/run/docker.sock
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "3000:3000"
+      - "5000:5000"
+      - "8888:8888"
+    entrypoint: 
+      - tail
+      - -f
+      - /dev/null
