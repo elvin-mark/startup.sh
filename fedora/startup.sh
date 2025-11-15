@@ -5,7 +5,7 @@ dnf update
 dnf install -y \
        git curl zsh make vim unzip tree wget \
        tmux btop htop jq bat \
-       ripgrep
+       ripgrep fastfetch fzf procps
 
 # === Networking Tools ===
 dnf install -y \
