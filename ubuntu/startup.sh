@@ -3,9 +3,8 @@ apt update
 
 # === Essential CLI Tools ===
 apt install -y \
-       git curl zsh make vim unzip tree wget \
-       tmux cmus w3m btop htop jq bat \
-       ripgrep
+       git curl wget zsh unzip make cmake vim tree \
+       tmux cmus w3m htop btop jq bat eza ripgrep fzf
 
 # === Networking Tools ===
 apt install -y \
@@ -18,8 +17,14 @@ apt install -y \
 # === Programming Languages & Runtimes ===
 apt install -y \
        python3 python3-pip \
-       golang \
        npm nodejs
+
+# Installing Golang 1.25.3
+wget https://go.dev/dl/go1.25.3.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.25.3.linux-amd64.tar.gz 
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+rm go1.25.3.linux-amd64.tar.gz
+source ~/.bashrc
 
 # === Install Neovim 0.11.3 (from GitHub release) ===
 wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.tar.gz
