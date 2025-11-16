@@ -45,5 +45,3 @@ npm install -g typescript typescript-language-server prettier
 
 # === Install Oh My Zsh ===
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "stty -ixon" >> ~/.zshrc
