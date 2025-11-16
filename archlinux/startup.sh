@@ -1,7 +1,7 @@
 # === Essential CLI Tools ===
 pacman -Syu git curl wget zsh make cmake vim unzip
 pacman -Syu fastfetch htop btop bat jq fzf tree
-pacman -Syu ripgrep tmux
+pacman -Syu ripgrep tmux eza
 
 # === Networking Tools ===
 pacman -Syu ngrep socat inetutils nmap tcpdump
