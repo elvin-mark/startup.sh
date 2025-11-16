@@ -1,7 +1,6 @@
 # === Essential CLI Tools ===
 pacman -Syu git curl wget zsh make cmake vim unzip
-pacman -Syu cmus w3m
-pacman -Syu fastfetch htop btop bat
+pacman -Syu fastfetch htop btop bat jq fzf tree
 pacman -Syu ripgrep tmux
 
 # === Networking Tools ===
@@ -14,9 +13,16 @@ pacman -Syu nasm gcc gdb clang
 pacman -Syu python python-pip go npm nodejs
 
 # === Build and install Neovim
-git clone https://github.com/neovim/neovim.git /tmp/neovim
-cd /tmp/neovim && make && make install
-cd $HOME
+# git clone https://github.com/neovim/neovim.git /tmp/neovim
+# cd /tmp/neovim && make && make install
+# cd $HOME
+
+# === Install Neovim 0.11.3 (from GitHub release) ===
+wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.tar.gz
+tar xzf nvim-linux-x86_64.tar.gz
+rm nvim-linux-x86_64.tar.gz
+mv nvim-linux-x86_64 nvim && mv nvim /opt/
+ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
 
 # === Clone LazyVim starter config ===
 mkdir -p $HOME/.config/nvim
