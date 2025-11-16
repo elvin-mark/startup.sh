@@ -21,6 +21,11 @@ dnf install -y \
        golang \
        npm nodejs
 
+# === Install uemacs ===
+git clone https://github.com/torvalds/uemacs.git /tmp/uemacs
+make -C /tmp/uemacs install
+rm -r /tmp/uemacs
+
 # === Install Neovim 0.11.3 (from GitHub release) ===
 wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.tar.gz
 tar xzf nvim-linux-x86_64.tar.gz
@@ -40,3 +45,5 @@ npm install -g typescript typescript-language-server prettier
 
 # === Install Oh My Zsh ===
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "stty -ixon" >> ~/.zshrc
