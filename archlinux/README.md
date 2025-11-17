@@ -131,6 +131,17 @@ passwd
 ```
 
 ### 12. Install Bootloader (GRUB)
+
+```sh
+pacman-key --init
+pacman-key --populate archlinux
+```
+
+Install `iwctl`
+```sh
+pacman -Syu iwd
+```
+
 ```sh
 pacman -S grub efibootmgr
 ```
