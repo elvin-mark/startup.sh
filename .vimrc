@@ -78,6 +78,8 @@ nnoremap <leader>nf :e %:h/
 
 nnoremap <leader>h :set hlsearch!<CR>
 
+nnoremap <silent> <Esc> :noh<CR><Esc>
+
 " Writing at the beginning of the line (or multiple lines)
 nnoremap <Leader>c :s/^//g<Left><Left>
 vnoremap <Leader>c :s/^//g<Left><Left>
