@@ -21,6 +21,7 @@ set timeoutlen=500
 set scrolloff=8
 set backupdir=$HOME/.vim/backups
 set directory=$HOME/.vim/swapfiles
+set laststatus=2
 colorscheme slate
 
 let g:mapleader=" "
