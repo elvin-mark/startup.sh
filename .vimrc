@@ -22,6 +22,14 @@ set scrolloff=8
 set backupdir=$HOME/.vim/backups
 set directory=$HOME/.vim/swapfiles
 set laststatus=2
+set statusline=
+set statusline+=\ %{mode()}
+set statusline+=\ %f
+set statusline+=\ %m
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %l/%L
+set statusline+=\ %p%%
 set wildmenu
 set wildoptions=pum
 set wildmode=list:longest,full
