@@ -1,5 +1,22 @@
 version: "1"
 services:
+  debian-dev-env:
+    image: debian:bookworm-slim
+    container_name: debian-dev-env
+    volumes:
+      - .:/root/startup.sh
+      - /var/run/docker.sock:/var/run/docker.sock
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "3000:3000"
+      - "5000:5000"
+      - "8888:8888"
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
+
   ubuntu-dev-env:
     image: ubuntu:latest
     container_name: ubuntu-dev-env
@@ -12,11 +29,11 @@ services:
       - "3000:3000"
       - "5000:5000"
       - "8888:8888"
-    entrypoint: 
+    entrypoint:
       - tail
       - -f
       - /dev/null
-  
+
   alpine-dev-env:
     image: alpine:latest
     container_name: alpine-dev-env
@@ -29,7 +46,7 @@ services:
       - "3000:3000"
       - "5000:5000"
       - "8888:8888"
-    entrypoint: 
+    entrypoint:
       - tail
       - -f
       - /dev/null
@@ -46,7 +63,7 @@ services:
       - "3000:3000"
       - "5000:5000"
       - "8888:8888"
-    entrypoint: 
+    entrypoint:
       - tail
       - -f
       - /dev/null
@@ -63,7 +80,7 @@ services:
       - "3000:3000"
       - "5000:5000"
       - "8888:8888"
-    entrypoint: 
+    entrypoint:
       - tail
       - -f
       - /dev/null
