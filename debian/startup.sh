@@ -4,7 +4,7 @@ apt update
 # === Essential CLI Tools ===
 apt install -y \
        git curl wget zsh unzip make cmake vim tree \
-       tmux cmus w3m htop btop jq bat ripgrep fzf
+       tmux htop btop jq bat ripgrep fzf neofetch
 
 # === Networking Tools ===
 apt install -y \
@@ -25,6 +25,9 @@ tar -C /usr/local -xzf go1.25.3.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 rm go1.25.3.linux-amd64.tar.gz
 source ~/.bashrc
+
+# Installing latest Bun
+curl -fsSL https://bun.sh/install | bash
 
 # === Install Neovim 0.11.3 (from GitHub release) ===
 wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.tar.gz
