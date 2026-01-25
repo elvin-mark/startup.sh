@@ -10,6 +10,9 @@ apt install -y \
 apt install -y \
        ngrep netcat-openbsd socat telnet tcpdump traceroute dnsutils
 
+# === Install Oh My Zsh ===
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # === Programming Tools (Assembly, C/C++, Debuggers) ===
 apt install -y \
        nasm gcc gdb clang-format clangd \
@@ -34,5 +37,3 @@ ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
 mkdir -p $HOME/.config/nvim
 git clone https://github.com/LazyVim/starter.git $HOME/.config/nvim
 
-# === Install Oh My Zsh ===
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
