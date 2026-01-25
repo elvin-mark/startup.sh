@@ -12,22 +12,16 @@ apt install -y \
 
 # === Programming Tools (Assembly, C/C++, Debuggers) ===
 apt install -y \
-       nasm gcc gdb clang-format clangd python3-venv
+       nasm gcc gdb clang-format clangd \
+       python3 python3-pip python3-venv \
 
-# === Programming Languages & Runtimes ===
-apt install -y \
-       python3 python3-pip \
-       npm nodejs
+curl -fsSL https://bun.sh/install | bash
 
-# Installing Golang 1.25.3
 wget https://go.dev/dl/go1.25.3.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.25.3.linux-amd64.tar.gz 
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 rm go1.25.3.linux-amd64.tar.gz
 source ~/.bashrc
-
-# Installing latest Bun
-curl -fsSL https://bun.sh/install | bash
 
 # === Install Neovim 0.11.3 (from GitHub release) ===
 wget https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.tar.gz
